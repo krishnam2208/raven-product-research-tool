@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
   <title>Product Research Tool</title>
   <style>
     body { font-family: Arial, sans-serif; padding: 20px; }
@@ -43,11 +44,14 @@
   <div id="results"></div>
 
   <script>
-    const products = [
-      { title: "Wireless Bluetooth Headphones", category: "Electronics", price: 2999, reviewCount: 1350, bsr: 23 },
-      { title: "Stainless Steel Water Bottle", category: "Kitchen", price: 699, reviewCount: 590, bsr: 78 },
-      { title: "Aloe Vera Skin Gel", category: "Beauty", price: 299, reviewCount: 250, bsr: 45 }
-    ];
+    let products = [];
+
+    fetch("products.json")
+      .then(res => res.json())
+      .then(data => {
+        products = data;
+        filterProducts();
+      });
 
     function filterProducts() {
       const category = document.getElementById('category').value;
