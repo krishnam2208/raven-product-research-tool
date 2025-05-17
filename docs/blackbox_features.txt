@@ -1,0 +1,5 @@
+1. Product Category
+2. Price Range (Min & Max)
+3. Review Count
+4. Best Seller Rank (BSR)
+5. Monthly Revenue (optional future feature)
