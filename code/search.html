@@ -1,49 +1,90 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Product Research Results</title>
+  <title>Product Research Tool</title>
   <style>
     body { font-family: Arial, sans-serif; padding: 20px; }
+    input, select, button { margin: 8px 0; padding: 8px; width: 200px; display: block; }
     .product-card {
       border: 1px solid #ccc; border-radius: 8px;
-      padding: 15px; margin-bottom: 15px;
+      padding: 15px; margin-top: 15px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
     .product-title { font-weight: bold; font-size: 18px; }
   </style>
 </head>
 <body>
+
+  <h2>Search Filters</h2>
+
+  <label>Category:</label>
+  <select id="category">
+    <option value="">--Select--</option>
+    <option value="Electronics">Electronics</option>
+    <option value="Kitchen">Kitchen</option>
+    <option value="Beauty">Beauty</option>
+  </select>
+
+  <label>Min Price:</label>
+  <input type="number" id="minPrice">
+
+  <label>Max Price:</label>
+  <input type="number" id="maxPrice">
+
+  <label>Max Review Count:</label>
+  <input type="number" id="maxReviews">
+
+  <label>Max BSR:</label>
+  <input type="number" id="maxBSR">
+
+  <button onclick="filterProducts()">Search</button>
+
   <h2>Search Results</h2>
   <div id="results"></div>
+
   <script>
     const products = [
       { title: "Wireless Bluetooth Headphones", category: "Electronics", price: 2999, reviewCount: 1350, bsr: 23 },
       { title: "Stainless Steel Water Bottle", category: "Kitchen", price: 699, reviewCount: 590, bsr: 78 },
       { title: "Aloe Vera Skin Gel", category: "Beauty", price: 299, reviewCount: 250, bsr: 45 }
     ];
-    const selectedCategory = "Electronics";
-    const minPrice = 1000, maxPrice = 4000;
-    const maxReviewCount = 2000, maxBSR = 100;
 
-    const filtered = products.filter(p =>
-      p.category === selectedCategory &&
-      p.price >= minPrice && p.price <= maxPrice &&
-      p.reviewCount <= maxReviewCount && p.bsr <= maxBSR
-    );
+    function filterProducts() {
+      const category = document.getElementById('category').value;
+      const minPrice = parseInt(document.getElementById('minPrice').value) || 0;
+      const maxPrice = parseInt(document.getElementById('maxPrice').value) || Infinity;
+      const maxReviews = parseInt(document.getElementById('maxReviews').value) || Infinity;
+      const maxBSR = parseInt(document.getElementById('maxBSR').value) || Infinity;
 
-    const resultsDiv = document.getElementById('results');
-    filtered.forEach(product => {
-      const card = document.createElement('div');
-      card.className = 'product-card';
-      card.innerHTML = `
-        <div class="product-title">${product.title}</div>
-        <div>Category: ${product.category}</div>
-        <div>Price: ₹${product.price}</div>
-        <div>Reviews: ${product.reviewCount}</div>
-        <div>BSR: ${product.bsr}</div>
-      `;
-      resultsDiv.appendChild(card);
-    });
+      const filtered = products.filter(p =>
+        (!category || p.category === category) &&
+        p.price >= minPrice && p.price <= maxPrice &&
+        p.reviewCount <= maxReviews &&
+        p.bsr <= maxBSR
+      );
+
+      const resultsDiv = document.getElementById('results');
+      resultsDiv.innerHTML = '';
+
+      if (filtered.length === 0) {
+        resultsDiv.innerHTML = "<p>No matching products found.</p>";
+        return;
+      }
+
+      filtered.forEach(p => {
+        const card = document.createElement('div');
+        card.className = 'product-card';
+        card.innerHTML = `
+          <div class="product-title">${p.title}</div>
+          <div>Category: ${p.category}</div>
+          <div>Price: ₹${p.price}</div>
+          <div>Reviews: ${p.reviewCount}</div>
+          <div>BSR: ${p.bsr}</div>
+        `;
+        resultsDiv.appendChild(card);
+      });
+    }
   </script>
+
 </body>
 </html>
