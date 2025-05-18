@@ -4,20 +4,53 @@
     "category": "Electronics",
     "price": 2999,
     "reviewCount": 1350,
-    "bsr": 23
+    "bsr": 23,
+    "url": "https://www.amazon.in/dp/B01LX0JZUM",
+    "image": "https://m.media-amazon.com/images/I/51pxtcVvTxL._AC_UL320_.jpg"
   },
   {
     "title": "Stainless Steel Water Bottle",
     "category": "Kitchen",
     "price": 699,
     "reviewCount": 590,
-    "bsr": 78
+    "bsr": 78,
+    "url": "https://www.amazon.in/dp/B07D9PZ8WY",
+    "image": "https://m.media-amazon.com/images/I/61N0sNBNtCL._AC_UL320_.jpg"
   },
   {
     "title": "Aloe Vera Skin Gel",
     "category": "Beauty",
     "price": 299,
     "reviewCount": 250,
-    "bsr": 45
+    "bsr": 45,
+    "url": "https://www.amazon.in/dp/B07MJ4YVDR",
+    "image": "https://m.media-amazon.com/images/I/71RXC0z+0gL._AC_UL320_.jpg"
+  },
+  {
+    "title": "Smart LED Bulb",
+    "category": "Electronics",
+    "price": 799,
+    "reviewCount": 560,
+    "bsr": 60,
+    "url": "https://www.amazon.in/dp/B08J4GVFBB",
+    "image": "https://m.media-amazon.com/images/I/61mXjU5zHtL._AC_UL320_.jpg"
+  },
+  {
+    "title": "Electric Kettle",
+    "category": "Kitchen",
+    "price": 1399,
+    "reviewCount": 720,
+    "bsr": 41,
+    "url": "https://www.amazon.in/dp/B01N5I3WQ8",
+    "image": "https://m.media-amazon.com/images/I/61+jN-UJ2UL._AC_UL320_.jpg"
+  },
+  {
+    "title": "Face Moisturizer Cream",
+    "category": "Beauty",
+    "price": 549,
+    "reviewCount": 420,
+    "bsr": 64,
+    "url": "https://www.amazon.in/dp/B01M6TWV3N",
+    "image": "https://m.media-amazon.com/images/I/61H8gxGxv9L._AC_UL320_.jpg"
   }
 ]

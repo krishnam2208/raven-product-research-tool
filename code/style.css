@@ -1,0 +1,60 @@
+
+body { font-family: Arial, sans-serif; padding: 20px; }
+.filter-row { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 16px; }
+.filter-row > div { flex: 1 1 180px; }
+input, select, button { padding: 8px; width: 100%; box-sizing: border-box; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th, td { border: 1px solid #ccc; padding: 10px; text-align: left; vertical-align: middle; }
+th { background-color: #f4f4f4; }
+td:first-child {
+  max-width: 300px;
+  width: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#pagination-controls {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  align-items: center;
+}
+#pagination-controls button {
+  padding: 6px 12px;
+  font-weight: bold;
+  cursor: pointer;
+  width: auto;
+  display: inline-block;
+}
+#loading {
+  font-weight: bold;
+  color: #444;
+  margin-bottom: 15px;
+}
+.product-title-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #000;
+}
+.product-img {
+  width: 40px;
+  height: auto;
+  border-radius: 4px;
+}
+
+
+.action-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: -10px;
+  margin-bottom: 20px;
+}
+
+.action-buttons button {
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  width: auto;
+}
